@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+  <?php
+$file = fopen("text.txt" , "r");
+$data = fread($file , filesize("text.txt" ));
+fclose($file);
+$numbers =  explode(" ",$data);
+
+?>
+var js_array = [<?php echo '"'.implode('","', $numbers).'"' ?>];
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "% OF GARBAGE IN CITIES"
+		},
+		legend: {
+			maxWidth: 350,
+			itemWidth: 120
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{ y: parseInt(js_array[2]), indexLabel: "Ahmednagar" },
+				{ y: parseInt(js_array[5]), indexLabel: "Tiwari Market" },
+				{ y: parseInt(js_array[8]), indexLabel: "KOTA" },
+				{ y: parseInt(js_array[11]), indexLabel: "Airtel B.P"},
+				{ y: parseInt(js_array[14]), indexLabel: "Grocery Shop" },
+				{ y: parseInt(js_array[17]), indexLabel: "Jaipur"},
+        { y: parseInt(js_array[20]), indexLabel: "Ahemdabad"},
+        { y: parseInt(js_array[23]), indexLabel: "Surat"},
+        { y: parseInt(js_array[26]), indexLabel: "Cochi"},
+        { y: parseInt(js_array[29]), indexLabel: "Madhowpur"}
+			]
+		}
+		]
+	});
+	chart.render();
+}
+ </script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+
+ <b> ACCORDING TO ABOVE DATA
+ MORE DUSTIBINS SHOULD BE PUT IN :JAIPUR AND AIRTEL B.P</b>
+ <br>
+
+ <a href="index.html" style="text-decoration: none">GO BACK TO HOME</a>
+</table>
+</body>
+</html>

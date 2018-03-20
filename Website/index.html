@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>                                                  
+<head>
+  <meta charset="utf-8"/>
+  <title>ECONAUTS</title>
+  <link rel="stylesheet" type="text/css" href="css\main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+   <header class="tm-header">
+     <div class="tm-container">
+          <img src="images/logo.jpg" alt="" width="200" height="110" class="tm-logo"/>
+       <h1><i>ECONAUTS</i></h1>
+ <div class="heman"><font size="20"><b><i> ECONAUTS SAVE TODAY SAVE FUTURE</i></b></font></div>
+</div>
+</font></font>
+<hr>
+   </header>
+   <div class="tm-container clearfix ">
+     <div class="tm-content">
+     <section class="tm-top-a">
+     	<br><br><br>
+        <img src="images/1.jpg" alt"Picture" width="100% " border="5" height="900 px" class="under"/>
+
+
+     </section>
+       
+     </div>
+     
+   </div>
+
+   <a href="5.html" ><div id="T918576030307"><span id="tooltiptext">dustbin no 1</span></div></a>
+   <a href="5.html"><div id="T917378659441"><span id="tooltiptext">dustbin no 2</span></div></a>
+   <a href="5.html"><div id="C3"><span id="tooltiptext">dustbin no 3</span></div></a>
+   <a href="5.html"><div id="C4"> <span id="tooltiptext">dustbin no 4</span></div></a>
+   <a href="5.html"><div id="C5"><span id="tooltiptext">dustbin no 5</span></div></a>
+   <a href="5.html"><div id="C6"><span id="tooltiptext">dustbin no 6</span></div></a>
+   <a href="5.html"><div id="C7"><span id="tooltiptext">dustbin no 7</span></div></a>
+   <a href="5.html"><div id="C8"><span id="tooltiptext">dustbin no 8</span></div></a>
+   <a href="5.html"><div id="C9"><span id="tooltiptext">dustbin no 9</span></div></a>
+   <a href="5.html"><div id="C10"><span id="tooltiptext">dustbin no 10</span></div></a>
+<script >  
+<?php
+$file = fopen("text.txt" , "r");
+$data = fread($file , filesize("text.txt" ));
+fclose($file);
+$numbers =  explode(" ",$data);
+
+?>
+var js_array = [<?php echo '"'.implode('","', $numbers).'"' ?>];
+
+ 
+for(var i=1;i<js_array.length;i=i+3)
+{
+       if(js_array[i]%2==0){
+           document.getElementById(js_array[i-1]).style.background="blue";
+       }
+       else
+       	   document.getElementById(js_array[i-1]).style.background="red";
+       
+}	   
+
+//document.write(js_array[0]);
+
+</script>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   
+<h2 class="w3-center" align="center">ALL MAPS</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <a href="#"><img class="mySlides" src="images\1.jpg" style="width:100%" ></a>
+  <a href="#"><img class="mySlides" src="images\2.jpg" style="width:100%" ></a>
+  <a href="#"><img class="mySlides" src="images\3.jpg" style="width:100%" ></a>
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+<br>
+
+   <br><br>
+   
+   <a href="2.html" style="text-decoration: none">
+     <img src="images\stat1.jpg" class="stat1" height="300" width="200" border="5"> 
+   </a><br><br>
+ 
+   <a href="3.html" style="text-decoration: none"><img src="images\stat2.jpg" class="stat2" height="295" width="200" border="5"> </a><br>
+   <br><br>
+
+</body>
+</html>

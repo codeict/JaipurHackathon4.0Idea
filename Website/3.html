@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript">
+
+
+
+
+<?php
+$file = fopen("text.txt" , "r");
+$data = fread($file , filesize("text.txt" ));
+fclose($file);
+$numbers =  explode(" ",$data);
+
+?>
+var js_array = [<?php echo '"'.implode('","', $numbers).'"' ?>];
+
+
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Garbage Collection Data Times (till 2018 elections)"
+      },
+      data: [
+      {
+        type: "bar",
+        dataPoints: [
+        { y: parseInt(js_array[2]), label: "Ahmednagar"},
+        { y: parseInt(js_array[5]), label: "Tiwari Market"},
+        { y: parseInt(js_array[8]), label: "KOTA"},
+        { y: parseInt(js_array[11]), label: "Airtel B.P"},
+        { y: parseInt(js_array[14]), label: "Grocery Shop"},
+        { y: parseInt(js_array[17]), label: "Jaipur"},
+        { y: parseInt(js_array[20]), label: "Ahemdabad"},
+        { y: parseInt(js_array[23]), label: "Surat"},
+        { y: parseInt(js_array[26]), label: "Cochi"},
+        { y: parseInt(js_array[29]), label: "Madhowpur"}
+        ]
+      },
+      {
+        type: "bar",
+        dataPoints: [
+        { y: parseInt(js_array[2])+1, label: "Ahmednagar"},
+        { y: parseInt(js_array[5])+2, label: "Tiwari Market"},
+        { y: parseInt(js_array[8])+3, label: "KOTA"},
+        { y: parseInt(js_array[11])+4, label: "Airtel B.P"},
+        { y: parseInt(js_array[14])+5, label: "Grocery Shop"},
+        { y: parseInt(js_array[17])+6, label: "Jaipur"},
+        { y: parseInt(js_array[20])+7, label: "Ahemdabad"},
+        { y: parseInt(js_array[23])+8, label: "Surat"},
+        { y: parseInt(js_array[26])+9, label: "Cochi"},
+        { y: parseInt(js_array[29])+10, label: "Madhowpur"}
+        ]
+      },
+      {
+        type: "bar",
+        dataPoints: [
+       { y: parseInt(js_array[2])+10, label: "Ahmednagar"},
+        { y: parseInt(js_array[5])+100, label: "Tiwari Market"},
+        { y: parseInt(js_array[8])+200, label: "KOTA"},
+        { y: parseInt(js_array[11])+300, label: "Airtel B.P"},
+        { y: parseInt(js_array[14])+400, label: "Grocery Shop"},
+        { y: parseInt(js_array[17])+500, label: "Jaipur"},
+        { y: parseInt(js_array[20])+600, label: "Ahemdabad"},
+        { y: parseInt(js_array[23])+700, label: "Surat"},
+        { y: parseInt(js_array[26])+800, label: "Cochi"},
+        { y: parseInt(js_array[29])+900, label: "Madhowpur"}
+        ]
+      }
+      ]
+    });
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+<br>
+
+*DATA IS COLLECTED TILL 12.00pm
+<br>
+<a href="index.html" style="text-decoration: none">GO BACK TO HOME</a>
+</body>
+</html
